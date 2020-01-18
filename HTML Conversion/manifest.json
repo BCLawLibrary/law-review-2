@@ -1,0 +1,25 @@
+{
+    "name": "BCLR HTML Conversion",
+    "version": "1.0",
+    "description": "Converts HTML exported from MS Word to usable HTML for online publication. Runs on all files in the Windows Users directory.",
+    "manifest_version": 2,
+    "icons": { "16": "icon16.png",
+              "48": "icon48.png",
+             "128": "icon128.png" },
+    "browser_action": {
+      "default_popup":"popup.html"
+   },
+   "permissions": [
+    "activeTab",
+    "<all_urls>"
+  ],
+   "content_scripts": [
+  {
+    "matches": [
+      "file:///C:/Users/*"
+    ],
+    "js": ["jquery.min.js"],
+    "css": ["styles.css"]
+  }
+]
+}

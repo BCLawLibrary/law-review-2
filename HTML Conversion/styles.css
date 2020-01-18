@@ -1,0 +1,21 @@
+#copyMe {
+  width:400px;
+  margin:10px;
+}
+
+#copyButton, #copySlugButton {
+  margin: 10px 10px 20px;
+  display: block;
+}
+
+.copy-notification {
+  margin:10px;
+}
+
+#slug {
+  margin:10px;
+}
+
+#slug::before {
+  content:"Slug: "
+}

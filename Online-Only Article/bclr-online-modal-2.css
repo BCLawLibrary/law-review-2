@@ -1,0 +1,342 @@
+/* modal specific CSS*/
+
+.modal {
+    background: rgba(255,255,255,.5);
+    padding: 10%;
+    overflow-y: auto;
+   }
+   .modal .modal-content {
+     width: 800px;
+     margin: auto;
+     background-color: white;
+     padding:20px 40px;
+     box-shadow: 10px 10px 5px #999;
+     border: solid 1px #eee;
+     max-width: 100%;
+     word-break: break-word;
+   }
+   #bclr-modal-content-inner {
+     margin-top:20px;
+     border-top:solid 1px #b99b73;
+     padding: 5px;
+   }
+
+   .fnbutton {
+     padding: 5px 15px;
+     margin-right: 10px;
+     border: solid 1px #d3d3d3;
+     border-radius: 10px;
+     font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+     cursor: pointer;
+   }
+   .fnbutton:hover {
+     box-shadow: 0px 0px 5px #8a100b;
+   }
+
+   .closeButton {
+     position: absolute;
+     top: 0px;
+     right: 0px;
+     margin-top: 10px;
+   }
+
+   .previous, .next {
+     font-size:14px
+   }
+
+   /*rest of the CSS */
+
+   .centers .bulk-wrap #pagecontent .featured-section .featured {
+       border-top: 1px solid #ccc;
+       border-bottom: 0px;
+       border-left: 0px;
+       border-right: 0px;
+   }
+
+
+   #articleHeader {
+     color: #b99b73;
+     border-bottom: 3px solid #b99b73;
+     margin-bottom: 10px;
+     width: 80%;
+     font-size: 20px;
+   }
+
+   div.WordSection1 {
+     margin-left:15px;
+     font-family: Georgia, Times, "Times New Roman", serif;
+   }
+
+   body div.WordSection1 h3 {
+     font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+       line-height: 150%;
+     text-align: left !important;
+     width: 80%;
+     font-size: 36px;
+     line-height: 42px;
+     font-weight: 100;
+     margin-bottom: 20px;
+   }
+
+   div.WordSection1 p.Document, div.WordSection1 p.Abstract {
+
+     line-height: 180%;
+     font-family: Georgia, Times, "Times New Roman", serif;
+       font-size: 18px;
+       line-height: 180%;
+     width: 90%;
+     max-width: 900px;
+   }
+
+   div.WordSection1 p.Abstract {
+     font-style: italic;
+     line-height: 150%;
+     clear:both;
+     margin-top: 30px;
+   }
+
+   div.WordSection1 p.AuthorName1{
+     font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+     font-size: 22px;
+     line-height: 32px;
+     margin:0px;
+   }
+
+   div.WordSection1 h4 {
+     margin-top: 30px;
+   }
+
+div.WordSection1 h5 {
+  font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+div.WordSection1 p.Head2 {
+  font-weight: bold;
+}
+
+   div.WordSection1 p.Extract, div.WordSection1 p.ExtractCxSpFirst, div.WordSection1 p.ExtractCxSpMiddle, div.WordSection1 p.ExtractCxSpLast {
+     font-size: 15px;
+     margin-left: 30px;
+     width: 65%;
+     max-width:900px;
+     line-height: 180%;
+     font-family: Georgia, Times, "Times New Roman", serif;
+   }
+
+   div.WordSection1 p.BulletListCxSpFirst, div.WordSection1 p.BulletListCxSpMiddle {
+     margin-bottom: 10px;
+   }
+
+   div.WordSection1 p.BulletListCxSpFirst, div.WordSection1 p.BulletListCxSpMiddle, div.WordSection1 p.BulletListCxSpLast {
+     margin-left: 40px;
+     width: 80%;
+     max-width: 860px;
+     font-size: 18px;
+     text-indent: -16px;
+   }
+
+   div.WordSection1 p.BulletListCxSpFirst span, div.WordSection1 p.BulletListCxSpMiddle span, div.WordSection1 p.BulletListCxSpLast span {
+     padding-right: 5px;
+   }
+
+   div#added {
+     width:80%;
+     margin: 0 0 0 0;
+     color: #888;
+     font-weight: 600;
+     font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+   }
+   div#added div {
+     display:inline-block;
+     margin: 5px 10px 0 0;
+   }
+
+
+   div.meta {
+
+   }
+   .pdf {
+     margin: 0 10px 0 20px;
+   }
+
+
+   /*icons*/
+   div.socialBar {
+
+   }
+
+   div.socialBar a {
+     vertical-align: middle;
+     margin: 0 5px;
+     border: 1px #d3d3d3 solid;
+     border-radius: 100%;
+     padding: 10px;
+
+   }
+
+   div.socialBar a span.reply {
+     font-size:14px;
+     position: relative;
+     top: -3px;
+   }
+
+   div.socialBar a:before {
+
+   }
+
+   a.icon-facebook:before {
+     content: "\e60e";
+   }
+
+   a.icon-twitter:before {
+     content: "\e60f";
+   }
+
+   a.pencil:before {
+     font-family:"icomoon";
+     content: "\f040";
+     margin-right:4px;
+   }
+
+
+
+   /*end icons*/
+
+   /*footnote links*/
+   a.footnoteLink {
+     border: 1px solid #d3d3d3;
+     border-radius: 25px;
+     display: inline-block;
+     margin: 0 5px;
+     vertical-align: baseline;
+     position: relative;
+     top: -0.4em;
+     width: 1.6em;
+     text-align: center;
+     font-size: .9em;
+     line-height: 1.5em;
+     font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+   }
+   p.AuthorName1 a.footnoteLink {
+     font-size: .6em;
+   }
+
+   /*buttons have matching hover behaviors*/
+   a.footnoteLink:hover, div.socialBar a:hover, .fnbutton:hover {
+     box-shadow: 0px 0px 5px #8a100b;
+     border-color:#8a100b;
+   }
+
+   a.footnoteLink span.NoterefInText, a.footnoteLink span.MsoFootnoteReference {
+     margin:auto;
+   }
+
+   a.footnoteLink span.NoterefInText.doubleDigits {
+
+   }
+
+   p.Extract a.footnoteLink span.NoterefInText, p.AuthorName1 a.footnoteLink span.MsoFootnoteReference{
+     top: 0%;
+   }
+
+   /*end footnote links*/
+
+   /*footnotes: styling when Javascript disabled*/
+   span.footnoteDiv {
+     display: block;
+     padding-bottom: 10px;
+   }
+
+   /*footnotes: not expanded*/
+   /*this doesn't work because of possible overlaps*/
+   /*Trying to keep in the flow of the document, there's an issue because the spans are IN the document tags, so subject to their width*/
+   /*This is kind of a tough problem. Just overlaying expanded footnote over others for now*/
+   span.footnoteTextOuter {
+     display:none;
+   }
+   .modal-content span.footnoteTextOuter {
+     display:block;
+   }
+   span.footnoteTextOuter, div.WordSection1 p.Extract span.footnoteTextOuter {
+
+   }
+
+
+   button.read-more {
+     display:block;
+     position:absolute;
+     top:25px;
+     border-top: none;
+     border-left: 1px solid #d3d3d3;
+     border-right: 1px solid #d3d3d3;
+     border-bottom: 1px solid #d3d3d3;
+     border-radius: 0px 0px 5px 5px;
+     padding: 5px 10px;
+     background: none;
+     color: #7d7d7d;
+   }
+
+   button.read-more:hover {
+     background-color: #e8e8e8;
+   }
+
+   span.footnoteTextOuter span.footnoteP {
+     height: 50%;
+     display: inline-block;
+     overflow: hidden;
+   }
+
+   /*expanded*/
+   span.footnoteTextOuter.expanded {
+     height: auto;
+     background: white;
+     z-index: 1;
+   }
+
+   span.footnoteTextOuter.expanded span.footnoteP {
+     height: 100%;
+     background: white;
+   }
+
+   span.footnoteTextOuter.expanded span.footnoteP:not(:first-child) {
+     visibility:visible;
+   }
+
+   span.footnoteTextOuter.expanded button.read-more {
+     position: relative;
+     top: -0px;
+   }
+
+   .NoterefInNote, .AuNoteRefInNote {
+     margin-right: 5px;
+   }
+
+   /*end expanded*/
+
+   div.WordSection1 p.FootNote {
+     width: 90%;
+     max-width: 900px;
+     margin-top: 40px;
+   }
+
+   div.WordSection1 p.FootNote ~ p.FootNote {
+     margin-top: 30px;
+   }
+
+   /*end footnotes*/
+
+
+   /*-----------------mobile------------------------*/
+   @media screen and (max-width:991px) {
+     .centers .bulk-wrap #pagecontent .featured-section .featured {
+         border-top: 0px;
+     }
+   }
+
+   @media screen and (min-width:768px) and (max-width:991px) {
+     div.WordSection1 {
+       margin-top:30px;
+     }
+   }
+
+   /*------------end mobile------------------*/
