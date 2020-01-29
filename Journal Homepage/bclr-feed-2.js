@@ -4,18 +4,18 @@ var columns = [
     {"data": "type", "title": "Type", className: "contentType",
     //if the article type ends in s remove the s to create the display text
     render: function (data,type,row){return data.replace(/s\b/, "");}},
-  
+
     //Title
     {"data": "title", "title": "Title", className: "title",
     render: function (data,type,row){return '<h2 tabindex=0 role="link">' + data + '</h2>';}},
-  
+
     //Authors
     {"data": "creator0", "title": "Author", className: "author"},
     {"data": "creator1", "title": "Author", className: "author"},
     {"data": "creator2", "title": "Author", className: "author"},
     {"data": "creator3", "title": "Author", className: "author"},
     {"data": "creator4", "title": "Author", className: "author"},
-  
+
     //Issue
     {"title": "Issue", "data": "issue", "name": "issue", className: "issueInItem",
     render: function (data,type,row){
@@ -27,7 +27,7 @@ var columns = [
         return '<a class="issueLinkInItem" href="#" issue="'+data+'">Boston College Law Review ' +display+'</a>';
       }
       else {return data;}}},
-  
+
     //Date Created - date uploaded to Digital Commons. Used for first sort
     {"data": "dateCreated", "title": "Date Created", "name": "dateCreated", className: "dateCreated",
       render: function (data,type,row){
@@ -38,7 +38,7 @@ var columns = [
         return date.toLocaleDateString('en-us', options);
         }
         else {return data;}}},
-  
+
     //Short Abstract
     {"data": "descriptionAbstract", "title": "Blurb", className: "shortAbstract",
     //don't add an elipsis if the abstract is not truncated
@@ -46,35 +46,35 @@ var columns = [
     render: function (data, type, row) {
       if (data.length > 127) {return data.substring(0, data.indexOf(" ",128))+"...";}
       else {return data;}}},
-  
+
     //Abstract
     {"data": "descriptionAbstract", "title": "Abstract", className: "abstract"},
-  
+
     //Link
     {"data": "identifier1", "title": "Link", className: "link",
     render: function (data,type,row){
       if ( type === 'display') {return '<a href="' + data + '">View PDF</a>';}
       else {return data;}}},
-  
+
     //Volume
     {"title": "Volume", "data": "volume", "name": "volume"},
-  
-  
-  
+
+
+
     //First Page
     {"data": "spage", "title": "First Page", "name": "firstPage", "type": "num-fmt"},
-  
+
     //BCLR Online Badge
     {"data": "spage", "title": "E. Supp.", "name": "E. Supp.", className: "badge bclrOnline",
     render: function (data,type,row){return data.replace(/[0-9]/g, '');}},
-  
+
     //slug - used to create direct links to E.Supp. - BCLR Online essays
     {"data": "slug", "title": "slug", "name": "slug", "className":"slugCell",
     render: function (data,type,row){
       if ( type === 'display') {return '<a href="bclr/e-supp-online/' + data + '">Read Essay</a>';}
       else {return data;}}}
   ];
-  
+
   function checkHash() {
       //load correct page/view based on the hash URL
       var table = $('.dataTable').DataTable();
@@ -86,7 +86,7 @@ var columns = [
                   $('#searching, #search-all, .span-x').show();
               });
       var hash = window.location.hash;
-  
+
       if (hash) {
           $('.responsive-columns.section').slideUp(500);
           var pageType = hash.match(/#(.*)\//).pop();
@@ -145,7 +145,7 @@ var columns = [
               $('#issue-wrapper, .dataTables_info')
                   .show();
       }
-  
+
       else if (pageType == "recent") {
           type = hash.replace("#recent/","");
             if (type == "issue") {
@@ -169,7 +169,7 @@ var columns = [
                         checkHash();
                     }
             }
-  
+
             else {//Show generic view - most recent items
                 table
                     .search("");
@@ -232,11 +232,11 @@ var columns = [
       }, 500);
       $('#e-supp').fadeIn(600);
   };
-  
+
   function create(data) {
       //select main div and put a table there
       //use bootstrap css to customize table style: http://getbootstrap.com/css/#tables
-  
+
     $(document).ready(function(){
       $('#bclr-content').html('<table cellpadding="0" cellspacing="0" border="0" class="table table-condensed table-responsive" id="bclr-table"></table>');
       //initialize the DataTable object and put settings in
@@ -245,7 +245,7 @@ var columns = [
         "data": data,
         "columns": columns,
         //order on date, then volume number, then issue, then first page
-        "order": [[8, "desc"],[10, "desc"],[7, "desc"],[12, "asc"]],
+        "order": [[8, "desc"],[12, "desc"],[7, "desc"],[13, "asc"]],
           "dom":"ftir",
           "language": {search:"", searchPlaceholder:"Search BCLR", info:"Showing _START_ to _END_ of _TOTAL_", infoFiltered:""},
         "pagingType": "simple",//no page numbers
@@ -325,15 +325,15 @@ var columns = [
             history.pushState("", document.title, "#issue/"+issue);
             checkHash();
           });
-  
+
           },
          //end of drawCallback
         "createdRow": function( row, data, dataIndex ) {
          $(row).addClass(data.type);
-  
+
        }
       }); //End of var table
-  
+
         //Event listener to the volme drop-down to redraw on change
       $('#volume').unbind().change( function() {
             if ($(this).val()=="more") {
@@ -349,8 +349,8 @@ var columns = [
               checkHash();
             }
       });
-  
-  
+
+
         $('.subjects .subject').unbind().click(function(){ //make subject badges filter the table
             var subject=$(this).text().replace(" ","-");
             history.pushState("", document.title, "#focus/"+subject);
@@ -372,9 +372,9 @@ var columns = [
             while (latestText.includes('E.Supp.')) { //skip down list until you reach a non-E.Supp. issue
                 n++
                 latestText = $('#volume option:nth-child(' + n + ')').text();
-            } 
+            }
             var latest = $('#volume option:nth-child(' + n + ')').val();
-                
+
             $('#volume').val(latest);
             history.pushState("", document.title, "#issue/"+latest);
             checkHash();
@@ -398,17 +398,17 @@ var columns = [
             $('#searching, #search-all, #search-archive, .span-x').hide();
         });
         checkHash();
-  
+
         //E. Supp. feature on home page
         const allData = data;//uses data directly from JSON, rather than DataTables API
-  
+
         var comments = allData.filter(function (el) {
             return (el["type"] == "Essay");
         });
       comments = comments.filter(function (el) {
         return (el["spage"].indexOf("E. Supp.") >= 0);
       });
-  
+
         comments.sort(function(a, b) {
           var dateA = a["dateCreated"]; // ignore upper and lowercase
         var dateB = b["dateCreated"]; // ignore upper and lowercase
@@ -437,11 +437,11 @@ var columns = [
             .text(rand.creator0)
             .addClass('author')
             .appendTo('#e-supp');
-  
+
         $('#e-supp h3 a').attr('href', 'bclr/e-supp-online');
     }); //(document).ready end
   } //end of create()
-  
+
   //Get data from S3 Bucket
   $.ajax({
     url: "https://s3.us-east-1.amazonaws.com/bc-law-library-bclr/bclr.json",
