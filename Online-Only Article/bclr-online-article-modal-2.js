@@ -1,3 +1,6 @@
+// code for BCLR E.Supp. article pages
+// last updated 2/11/2020 (fixing footnote formatting errors)
+
 $(document).ready(function(){
     //This version will use a modal or popup window to display footnotes
     //create content areas for the social buttons and information gathered from the feed

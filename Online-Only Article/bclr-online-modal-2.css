@@ -1,4 +1,4 @@
-/* modal specific CSS*/
+/* modal specific CSS for BCLR E.Supp. article pages*/
 
 .modal {
     background: rgba(255,255,255,.5);
@@ -75,7 +75,7 @@
      font-size: 36px;
      line-height: 42px;
      font-weight: 100;
-     margin-bottom: 20px;
+     margin-bottom: 10px;
    }
 
    div.WordSection1 p.Document, div.WordSection1 p.Abstract {
@@ -99,7 +99,33 @@
      font-family: 'Open Sans',Helvetica,Arial,sans-serif;
      font-size: 22px;
      line-height: 32px;
-     margin:0px;
+     margin:20px 0px 0px 0px;
+   }
+
+   div.WordSection1 span.subHead, div.response-sec span.subHead{
+     font-family: 'Open Sans',Helvetica,Arial,sans-serif; 
+     font-size: 28px;
+     font-weight: 600;
+     margin: 0px;
+     line-height: 32px;
+   }
+
+   div.response-sec p.response-ref {
+     margin-bottom: 0px;
+     margin-left: 2px;
+   }
+
+   div.response-sec p.response-ref a {
+    font-style: italic;
+    color: #23527c;
+  }
+
+   div.response-sec {
+     width: 940px;
+     background-color: #d5cfb5;
+     padding: 20px;
+     margin-top: 50px;
+     margin-left: -5px;
    }
 
    div.WordSection1 h4 {
