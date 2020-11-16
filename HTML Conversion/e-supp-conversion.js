@@ -30,7 +30,7 @@ function modifyDOM() {
 				html: this.innerHTML
 		});
 	});
-	$('h4 br').remove();
+	$('h4 br, h3 br').remove();
 	$('h4 a span').unwrap();
 	//$('i').html("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;").remove();
 	$('p.FootNote a').each(function(e){
@@ -65,6 +65,7 @@ function modifyDOM() {
 
 	$('h3').attr('style','text-align: center;');
 
+	$('a[name^="H"]').unwrap();
 
 	$('a[href*="_ftn"]').addClass('footnote footnoteLink');
 	$('a[href*="_ftnref"]').removeClass('footnoteLink').addClass('footnoteTextOriginal');
@@ -87,7 +88,6 @@ function modifyDOM() {
 		});
 
 	});
-
 
 	$('.footnote span').children().each(function(){
 			$(this).text($(this).text().replace('[','').replace(']',''));
@@ -116,6 +116,16 @@ $(".footnoteTextOuter span.footnoteP:first-child").each(function(){
     }
   });
 
+  //added 12/10/19: remove leftover styling from Word's track changes
+	$("span[class*='Delta'] *").removeAttr("style").unwrap();
+	$("a[name*='_DV']:empty").remove();
+	$("a[name*='_DV']").contents().unwrap();
+	$("a[name*='_Ref']:empty").remove();
+	$("a[name*='_Ref']").contents().unwrap();
+	var testSpans = $('span.footnoteP').find('span').not(".allCaps, .NoterefInNote, .AuNoteRefInNote");
+	//console.log(testSpans);
+	$(testSpans).contents().unwrap();
+
   //add aria roles & labels to footnotes for accessibility
   $('a.footnoteLink').attr('role','doc-noteref');
   $('span.footnoteTextOuter').attr('role','doc-footnote');
@@ -132,6 +142,19 @@ $(".footnoteTextOuter span.footnoteP:first-child").each(function(){
 	  $(this).parent().attr('aria-label', footNumb.trim());
   });
 
+
+  //added 5/15/2020: catch broken footnote links
+  $('a.footnote.footnoteTextNew:empty').each(function(){
+	  var reg = /\[\d+\]/;
+	  var footNum = reg.exec($(this).parent().html());
+	  if (footNum) {
+		var footTrim = footNum[0].replace('[','').replace(']','');
+		console.log(footTrim);
+		$(this).html('<span class="NoterefInNote">' + footTrim + '</span>');
+		$(this).parent().html($(this).parent().html().replace(footNum[0],''));
+	  }
+	  
+  });
 
 	//copy body HTML
 		var copy = $("body").html();
