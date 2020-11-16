@@ -268,9 +268,8 @@ $.ajax({
 
     //Get response data from google sheets
     $.ajax({
-      //url: "https://www.bc.edu/content/dam/bc1/schools/law/js/bclr/bclr-responses.json",
-      //url: "https://spreadsheets.google.com/feeds/list/1bnHcCgRlEZxmDgUSBfrd6KRNzlwFHeMTBlQ15Rog4SM/od6/public/values?alt=json",
-      url: "https://sheets.googleapis.com/v4/spreadsheets/1bnHcCgRlEZxmDgUSBfrd6KRNzlwFHeMTBlQ15Rog4SM/values/A:T?key=AIzaSyD8Y28YJpVhE4XlVlOoA74Ws47YdPz5nGA",
+      // URL format is: "https://sheets.googleapis.com/v4/spreadsheets/{SHEET_ID}/values/{RANGE}?key={GOOGLE_SHEETS_API_KEY}"
+      url: "https://sheets.googleapis.com/v4/spreadsheets/1bnHcCgRlEZxmDgUSBfrd6KRNzlwFHeMTBlQ15Rog4SM/values/A:T?key=[INSERT_KEY_HERE]",
       success: function(json) {
         var data2 = json["values"]; //spreadsheet data lives in an array with the name values
         //rewrite data to an object with key-value pairs.
