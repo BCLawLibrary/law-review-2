@@ -16,10 +16,12 @@ h2 a:hover {
 	text-decoration:inherit;
 }
 
-#bclr-table, #bclr-table2{width:90%;
-margin:auto;
+#bclr-table {
+	width:90%;
+	margin:auto;
 }
-#bclr-table tbody td.volume, #bclr-table2 tbody td.volume {
+
+#bclr-table tbody td.volume {
 	float: right;
 	font-weight: 200;
 	margin-left:10%;
@@ -32,11 +34,7 @@ margin:auto;
 	/* border-left: 1px solid #A9A9A9; */
 }
 
-#bclr-table2 tbody td.volume {
-	color: #555;
-}
-
-#bclr-table tbody td.title, #bclr-table2 tbody td.title  {
+#bclr-table tbody td.title {
 	clear:both;
 }
 .social{
@@ -62,7 +60,7 @@ td.link a.icon-twitter:before {
 	border-right: 0px;
 }
 
-#bclr-table tbody td.date, #bclr-table2 tbody td.date {
+#bclr-table tbody td.date {
 	font-size:14px;
 	margin-left: 10px;
 	margin-bottom: 15px;
@@ -77,19 +75,14 @@ td.link a.icon-twitter:before {
 	display: inline-block;
 }
 
-#bclr-table_filter, #bclr-table2_filter{
-	width: 82%;
+#bclr-table_filter {
+	flex-grow: 1;
 	font-size: 19px;
-	margin:auto;
 	background-color: #726158;
-	margin-bottom: 5px;
+  display: inline-block;
 }
 
-#bclr-table2_filter{
-	background-color: #b99b73;
-}
-
-#bclr-table_info, #bclr-table2_info {
+#bclr-table_info {
 	text-align: right;
 	width: auto;
 	margin: auto;
@@ -98,21 +91,74 @@ td.link a.icon-twitter:before {
 }
 
 
-#bclr-table_filter label, #bclr-table2_filter label {
+#bclr-table_filter label {
 	/*background: #b7b3a5;*/ /*changed*/
-	padding: 15px 30px;
+	padding: 15px 0 15px 30px;
 	font-weight:normal;
 	width:100%;
 	margin-bottom: 0;
 }
 
-#bclr-table_filter label:before, #bclr-table2_filter label:before {
+#bclr-table_filter label:before {
 	content: "\e609";
 	color: #ccc; /*changed*/
     font-size: 18px;
     font-family: 'icomoon';
 	margin-right:10px;
 
+}
+
+#type-select {
+	background-color: #726158;
+	display: inline-block;
+	width: max-content;
+	font-size: 19px;
+}
+
+#type-select label {
+	padding: 18px 30px;
+	margin-bottom: 0;
+	color: #ccc;
+	font-weight: 600;
+}
+
+#type-select select {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	position: relative;
+	z-index: 99;
+	background-color: transparent;
+	border: 2px #726158 solid;
+	color: #ccc;
+	font-weight: normal;
+	padding: 5px;
+	border-bottom: 2px #ccc solid;
+	cursor: pointer;
+	width: 220px;
+}
+
+#type-select select option {
+	background-color: #726158;
+}
+
+#type-select select:focus {
+	border: 2px #ccc solid;
+}
+
+#type-select label::after {
+	content: "\e603";
+	color: #ccc;
+	font-family: 'icomoon';
+	position: relative;
+	left: -30px;
+	top: 3px;
+}
+
+#bclr-table-topbar {
+	margin: 0 9% 10px;
+	display: flex;
+	justify-content: space-between;
 }
 
 /**/
@@ -153,56 +199,63 @@ body .int-wrap p.author {
 
 #bclr-table_length{padding-top:10px; padding-bottom:10px}
 
-#bclr-table, #bclr-table2{
+#bclr-table {
 	display:block;
 	overflow-x:auto;
 }
 
 .contentType::after{content: " by ";}
 
-#bclr-table_filter input, #bclr-table2_filter input	{
-    /*background: #b7b3a5;*/ /*changed*/
-		border: 1px solid #ccc;
-	-webkit-border-radius: 0;
+#bclr-table_filter input {
+    background-color: #726158;
+		border: 2px #726158 none;
+		border-bottom: 2px #ccc solid;
+	  -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
     -moz-background-clip: padding;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    border: 0;
     height: auto;
 		width: 90%;
 	  padding: 5px;
+		margin-top: 3px;
+		color: #ccc;
 }
-#bclr-table_filter ::-webkit-input-placeholder, #bclr-table2_filter ::-webkit-input-placeholder {
+
+#bclr-table_filter input:focus {
+	border: 2px #ccc solid;
+}
+
+#bclr-table_filter ::-webkit-input-placeholder {
 	color: #ccc !important;
 }
-#bclr-table_filter input::-webkit-input-placeholder, #bclr-table2_filter input::-webkit-input-placeholder {
+#bclr-table_filter input::-webkit-input-placeholder {
 	color: #ccc !important;
 }
-#bclr-table_filter :-ms-input-placeholder, #bclr-table2_filter :-ms-input-placeholder {
+#bclr-table_filter :-ms-input-placeholder {
 	color: #ccc !important;
 }
 
-#bclr-table_filter ::-moz-placeholder, #bclr-table2_filter ::-moz-placeholder {
+#bclr-table_filter ::-moz-placeholder {
 	color: #ccc !important;
 	 opacity:  1;
 }
-#bclr-table_filter :-moz-placeholder, #bclr-table2_filter :-moz-placeholder {
+#bclr-table_filter :-moz-placeholder {
 	color: #ccc !important;
 	 opacity:  1;
 }
 
-table#bclr-table, table#bclr-table2{
+table#bclr-table {
 	background-color: transparent;
 	border:0px solid;
 }
 
 /*--[  This does the job of making the table rows appear as cards ]----------------*/
-#bclr-table tbody img, #bclr-table2 tbody img {
+#bclr-table tbody img {
 	height: 100px;
 }
-#bclr-table tbody tr, #bclr-table2 tbody tr {
+#bclr-table tbody tr {
     float: left;
 		margin:auto;
 	margin-top: 15px;
@@ -216,23 +269,13 @@ table#bclr-table, table#bclr-table2{
 
 #bclr-table tbody tr {
 	background-color: white;
-}
-
-#bclr-table tbody tr {
 	border-bottom: 1px solid #ccc;
-}
-
-#bclr-table2 tbody tr {
-	border-bottom: 1px solid #A9A9A9;
 }
 
 .item #bclr-table tbody tr {
 	border-bottom:1px solid #ccc;
 }
 
-.item #bclr-table2 tbody tr {
-	border-bottom:1px solid #A9A9A9;
-}
 
 /*This really does the job of making it display as cards*/
 #bclr-table tbody td, #bclr-table2 tbody td, #article-popup td {
@@ -242,12 +285,12 @@ table#bclr-table, table#bclr-table2{
 }
 
 /*Author and content type on same line*/
-#bclr-table tbody td.author, #bclr-table2 tbody td.author{
+#bclr-table tbody td.author {
 	display:inline-block;
 	margin-left: -2px;
 	font-size:14px;
 }
-#bclr-table tbody td.contentType, #bclr-table2 tbody td.contentType{
+#bclr-table tbody td.contentType {
   display:inline-block;
 	font-weight:600;
 	font-size: 14px;
@@ -267,12 +310,12 @@ table#bclr-table, table#bclr-table2{
 /*TB added*/
 .table thead{display:none;}
 
-#bclr-table tbody, #bclr-table2 tbody {
+#bclr-table tbody {
 	display:flex;
 	flex-wrap:wrap;
 }
 
-#bclr-table tbody label, #bclr-table2 tbody label {
+#bclr-table tbody label {
 	display: inline;
 	position: relative;
 	font-size: 85%;
@@ -290,12 +333,12 @@ td.title, .e-supp-title {
 	cursor:auto;
 }
 
-#bclr-table tbody td.author:empty, #bclr-table2 tbody td.author:empty {
+#bclr-table tbody td.author:empty {
 	display:none;
 }
 
 
-#bclr-table .hidden, #bclr-table2 .hidden {
+#bclr-table .hidden {
 	display:none;
 }
 
@@ -374,7 +417,7 @@ ul.subjects {
 .home button.btn.btn-default{
 	background-color:#938479;
 }
-#pagecontent button.btn.btn-default#more, #pagecontent button.btn.btn-default#more2 {
+#pagecontent button.btn.btn-default#more {
 	float: right;
 	background-color:#726158;
 	color:#fff;
@@ -383,10 +426,7 @@ ul.subjects {
 	margin-right: 100px;
 }
 
-#pagecontent button.btn.btn-default#more2 {
-	background-color: #b99b73;
-}
-#more:after, #more2:after, #vol-select:after {
+#more:after, #vol-select:after {
 	content: "\e603";
 	color: #fff;
     font-family: 'icomoon';
@@ -496,16 +536,16 @@ td.link a:hover:before {
 
 
 
-#bclr-table tbody td.abstract, #bclr-table2 tbody td.abstract {
+#bclr-table tbody td.abstract {
 	display:none;
 }
-.item #bclr-table tbody td.abstract, .item #bclr-table2 tbody td.abstract {
+.item #bclr-table tbody td.abstract {
 	display:block;
 }
-.item #bclr-table tbody td.shortAbstract, .item #bclr-table2 tbody td.shortAbstract {
+.item #bclr-table tbody td.shortAbstract {
 	display:none;
 }
-.item #bclr-table_filter, .item #bclr-table2_filter {
+.item #bclr-table_filter {
 	display:none;
 }
 .itemBack {
@@ -607,23 +647,6 @@ td.link a:hover:before {
 	margin-left:10px;
 }
 
-#response-section {
-	background-color: #d5cfb5;
-	padding-top: 40px;
-	padding-bottom: 80px;
-	margin-top: 80px;
-	margin-left: 50px;
-	margin-right: 50px;
-}
-
-#response-section tr.odd {
-	background-color: #d5cfb5;
-}
-
-#bclr-table2 tbody td.date {
-	color: #555;
-}
-
 #bclr-content {
 	margin-top: 40px;
 }
@@ -657,22 +680,48 @@ td.link a:hover:before {
 	}
 	#controls{width:100%;}
 
-	#bclr-table, #bclr-table2, #bclr-table_filter, #bclr-table2_filter, #issue-wrapper {width: 100%;}
-	#bclr-table tbody tr, #bclr-table2 tbody tr {
+	#bclr-table, #bclr-table_filter, #issue-wrapper {width: 100%;}
+	#bclr-table tbody tr {
 		width:100%;
 	}
 
+	#bclr-table-topbar {
+		margin: 0;
+		display: block;
+	}
 
+	#type-select {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	#type-select label {
+		padding-top: 0;
+	}
 
 }
+
+@media only screen and (max-width: 768px) {
+	#bclr-table_filter label {
+		padding-right: 15px;
+	}
+}
+
 @media only screen and (max-width: 470px) {
 	ul.subjects button {
 		min-height:56px;
 	}
-	#bclr-table_filter, #bclr-table2_filter {
+	#bclr-table_filter, #type-select {
 		font-size: 16px;
 	}
+
+	#bclr-table_filter label {
+		padding-right: 30px;
+	}
+
 }
+
 #bclr-wrapper :focus {
     outline: #5B9DD9 auto 1px;
 }
