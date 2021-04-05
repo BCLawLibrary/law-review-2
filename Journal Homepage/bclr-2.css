@@ -191,6 +191,7 @@ td.title, .e-supp-title {
 
 #vol-select {
 	display:block;
+	position: relative;
 	font-size:19px;
 	padding: 5px 15px;
 	background-color: #929b90;
@@ -213,10 +214,16 @@ td.title, .e-supp-title {
 }
 
 #volume {
-	background-color: #929b90;
+	background-color: transparent;
+	position: relative;
+	z-index: 99;
 	border:0px;
 	cursor:pointer;
 	height:38px;
+	width: 140px;
+}
+#volume option {
+	background-color: #929b90;
 }
 ul.subjects {
 	display:inline-block;
@@ -267,6 +274,11 @@ ul.subjects {
 	color: #fff;
     font-family: 'icomoon';
 	margin:0 0 0 10px;
+}
+#vol-select:after {
+	position: relative;
+	left: -40px;
+	top: 3px;
 }
 /*hover colors*/
 #issue-wrapper button#search-archive:hover, #issue-wrapper button#search-archive:active,#issue-wrapper button#search-archive:focus {
@@ -523,7 +535,7 @@ td.link a:hover:before {
 	#controls{width:100%;}
 	#vol-select {margin-bottom:10px;}
 	ul.subjects {
-		width:100%
+		width:100%;
 		padding: 0 0 0 10px;
 	}
 	#bclr-wrapper .subjects button {
