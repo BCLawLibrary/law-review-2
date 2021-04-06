@@ -179,6 +179,10 @@ function create(data1) {
             $thisAuthor.text($thisAuthor.text() + ",");
           }
         });
+ 
+        //add aria-label to search bar
+        $('div#bclr-table_filter input').attr('aria-label','Search');
+
         //load correct page on back or forward browser button
         window.onpopstate = function(event) {
           if (window.location.hash == "pagecontent") {}//If the user uses the skip navigation link, follow the default behavior
@@ -197,7 +201,6 @@ function create(data1) {
           //console.log('loaded on default');
           checkHash();
         }
-      
 
         //hide more button if less than six entries
         tableLen = $("#bclr-table tr").length;
