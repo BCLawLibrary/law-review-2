@@ -351,6 +351,16 @@ div.WordSection1 p.Head2 {
 
    /*end footnotes*/
 
+   /*figures*/
+   div.WordSection1 p.ArtHolder {
+     margin-bottom: 10px;
+   }
+
+   p.captionHolder {
+     font-style: italic;
+     font-size: 14px;
+     margin-left: 5px;
+   }
 
    /*-----------------mobile------------------------*/
    @media screen and (max-width:991px) {
