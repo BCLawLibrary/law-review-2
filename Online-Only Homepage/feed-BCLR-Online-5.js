@@ -173,13 +173,15 @@ function create(data1) {
           });
         });
         //add commas between authors
+        /*
         $("td.author").each(function(){
           $thisAuthor = $(this);
           if($thisAuthor.next("td.author").text()){
             $thisAuthor.text($thisAuthor.text() + ",");
           }
         });
- 
+        */
+
         //add aria-label to search bar
         $('div#bclr-table_filter input').attr('aria-label','Search');
 
@@ -223,6 +225,14 @@ function create(data1) {
             $("#more").hide();
           }
       	});
+
+        //add commas between authors
+        $("td.author").each(function(){
+          $thisAuthor = $(this);
+          if($thisAuthor.next("td.author").text() && ($thisAuthor.text().charAt($thisAuthor.text().length-1) !== ',')){
+            $thisAuthor.text($thisAuthor.text() + ",");
+          }
+        });
 
         //Make enter keypress produce click
       	$('span.span-x, .title h2, .itemBack a, #e-supp h2, #e-supp h3').unbind('keypress').keypress(function(e) {

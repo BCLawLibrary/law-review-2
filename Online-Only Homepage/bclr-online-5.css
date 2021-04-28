@@ -290,13 +290,15 @@ table#bclr-table {
 /*Author and content type on same line*/
 #bclr-table tbody td.author {
 	display:inline-block;
-	margin-left: -2px;
+	margin-right: -3px;
 	font-size:14px;
+	padding-bottom: 0;
 }
 #bclr-table tbody td.contentType {
   display:inline-block;
 	font-weight:600;
 	font-size: 14px;
+	padding-bottom: 0;
 }
 
 
