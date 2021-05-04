@@ -325,7 +325,7 @@ td.author {
 #bclr-table tbody td.slugCell {
 	display:none;
 }
-#bclr-table tbody td.link, #bclr-table tbody tr.Essay td.slugCell, #bclr-table tbody td.dateCreated {
+#bclr-table tbody td.link, #bclr-table tbody tr.Essay td.slugCell, #bclr-table tbody tr.Response td.slugCell, #bclr-table tbody td.dateCreated {
 	font-size:14px;
 	margin-left:20px;
 	display: inline-block;
