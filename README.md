@@ -7,4 +7,4 @@ The online only content begins life as HTML exported from Microsoft Word. The fo
 
 This is a new version of the project at https://github.com/BCLawLibrary/law-review. That project includes code for harvesting the OAI-PMH feed to a Google Sheet. That is no longer our practice, but it is a functional and simple approach, so we plan to keep the old version available as well.
 
-Requires JQuery, DataTables (https://datatables.net/); uses Google Sheets API V4 (https://developers.google.com/sheets/api).
+Requires JQuery, DataTables (https://datatables.net/).
