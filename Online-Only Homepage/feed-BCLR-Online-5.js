@@ -1,8 +1,8 @@
 // on BCLR E. Supp. Online homepage
 // uses JSON stored on AWS to retrieve essay, symposium, response data
-//last updated 3/2021 - added sortable dropdown
+//last updated 2/2021 - updated to use JSON API
 
-function authorFirstLast(data, type, row) {
+function authorFirstLast(data, type, row) { // no longer needed (2/4/2022)
   if (data) {
     return data.split(", ")[1] + " " + data.split(", ")[0];
   }
@@ -10,7 +10,6 @@ function authorFirstLast(data, type, row) {
     return "";
   }
 }
-
 
 function checkHash() {
   //load correct page/view based on the hash URL
@@ -68,16 +67,11 @@ var columns = [
   },
 
   //Authors
-  {"data": "creator0", "title": "Author", className: "author",
-    render: authorFirstLast},
-  {"data": "creator1", "title": "Author", className: "author",
-    render: authorFirstLast},
-  {"data": "creator2","title": "Author", className: "author",
-    render: authorFirstLast},
-  {"data": "creator3", "title": "Author", className: "author",
-    render: authorFirstLast},
-  {"data": "creator4", "title": "Author", className: "author",
-    render: authorFirstLast},
+  {"data": "creator0", "title": "Author", className: "author"},
+  {"data": "creator1", "title": "Author", className: "author"},
+  {"data": "creator2","title": "Author", className: "author"},
+  {"data": "creator3", "title": "Author", className: "author"},
+  {"data": "creator4", "title": "Author", className: "author"},
 
   //Title
   {"data": "title", "title": "Title", className: "title",
@@ -107,7 +101,7 @@ var columns = [
   {"title": "Issue", "data": "issue", "name": "issue"},
 
   //First Page
-  {"data": "spage", "title": "First Page", "name": "firstPage", "type": "num-fmt"},
+  //{"data": "spage", "title": "First Page", "name": "firstPage", "type": "num-fmt"},
 
   //Date Created - date uploaded to Digital Commons. Used for first sort
   {"data": "dateCreated", "title": "Date Created", "name": "dateCreated", className: "date",
@@ -153,12 +147,12 @@ function create(data1) {
       "data": data1,
       "columns": columns,
       //order on date
-      "order": [[13, "desc"]],
+      "order": [[12, "desc"]],
       "dom":"ftir",
 	    "language": {search:"", searchPlaceholder:"Search online-only content", info:"Showing _START_ to _END_ of _TOTAL_", infoFiltered:""},
       "pagingType": "simple",//no page numbers
 		  "pageLength": 6,
-	    "columnDefs": [{"visible": false, "targets": [8,11,12,15]}], // This says what columns are hidden
+	    "columnDefs": [{"visible": false, "targets": [8,11,14]}], // This says what columns are hidden
       //"searching": false, //remove search bar
 	    initComplete: function () {
         //create sorting drop-down

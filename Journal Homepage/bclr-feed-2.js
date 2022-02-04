@@ -59,14 +59,19 @@ var columns = [
     //Volume
     {"title": "Volume", "data": "volume", "name": "volume"},
 
-
-
-    //First Page
-    {"data": "spage", "title": "First Page", "name": "firstPage", "type": "num-fmt"},
+    //Article Number
+    {"data": "identifier0", "title": "Article Number", "name": "articleNum", "type": "num-fmt",
+    render: function(data,type,row){return data.replace(/^.*\//g, '');}},
 
     //BCLR Online Badge
-    {"data": "spage", "title": "E. Supp.", "name": "E. Supp.", className: "badge bclrOnline",
-    render: function (data,type,row){return data.replace(/[0-9]/g, '');}},
+    {"data": "issue", "title": "E. Supp.", "name": "E. Supp.", className: "badge bclrOnline",
+    render: function (data,type,row){
+        if (data.substring(0,2) < 59) {
+            data = data.replace(":6",":E. Supp.");}
+        else {
+          data = data.replace(":9",":E. Supp.");}
+        return data.replace(/[0-9]+:/g, '');
+    }},
 
     //slug - used to create direct links to E.Supp. - BCLR Online essays
     {"data": "slug", "title": "slug", "name": "slug", "className":"slugCell",
@@ -406,7 +411,11 @@ var columns = [
             return (el["type"] == "Essay");
         });
       comments = comments.filter(function (el) {
-        return (el["spage"].indexOf("E. Supp.") >= 0);
+        if (el["issue"].substring(0,2) < 59) {
+            el["issue"] = el["issue"].replace(":6",":E. Supp.");}
+        else {
+          el["issue"] = el["issue"].replace(":9",":E. Supp.");}
+        return (el["issue"].indexOf("E. Supp.") >= 0);
       });
 
         comments.sort(function(a, b) {
@@ -439,6 +448,13 @@ var columns = [
             .appendTo('#e-supp');
 
         $('#e-supp h3 a').attr('href', 'bclr/e-supp-online');
+
+        //hotfix: hide duplicate/alternative names from feed
+        $('td.author').each(function(i,el){
+            if (names_to_hide.includes($(this).text())) {
+                $(el).css("display","none");
+            }
+        });
     }); //(document).ready end
   } //end of create()
 
