@@ -101,5 +101,10 @@ var names_to_hide= [
     "Steven L. Schwarcz",
     "Zachary Gubler",
     "Zoe D. Robinson",
-    "Christopher Cifrino"
+    "Christopher Cifrino",
+    "Lisa G. Sun",
+    "Emily A. Jordan",
+    "Stephanie Barclay",
+    "Alexander Boni-Saenz",
+    "Sarah Rajec"
 ];
