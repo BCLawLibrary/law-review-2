@@ -106,5 +106,7 @@ var names_to_hide= [
     "Emily A. Jordan",
     "Stephanie Barclay",
     "Alexander Boni-Saenz",
-    "Sarah Rajec"
+    "Sarah Rajec",
+    "Lea Johnston",
+    "Rebecca Hamilton"
 ];
